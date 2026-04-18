@@ -1,44 +1,138 @@
 [gd_scene format=3 uid="uid://dqnprgoxue3d7"]
 
+[ext_resource type="Shader" uid="uid://0c7eiw1fff0p" path="res://shaders/screendither.gdshader" id="1_2gju5"]
+[ext_resource type="Script" uid="uid://cnlnucyuwtdfc" path="res://scripting/copy_transform.gd" id="2_n77mx"]
+[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="2_nb1wl"]
+[ext_resource type="Script" uid="uid://c0ll2xp2airrq" path="res://camera.gd" id="2_rlkm5"]
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pn5b2"]
 
 [sub_resource type="Sky" id="Sky_mncer"]
 sky_material = SubResource("ProceduralSkyMaterial_pn5b2")
 
 [sub_resource type="Environment" id="Environment_cguwc"]
-background_mode = 2
+background_energy_multiplier = 0.0
 sky = SubResource("Sky_mncer")
-tonemap_mode = 3
-tonemap_exposure = 2.36
-tonemap_agx_contrast = 1.49
+tonemap_agx_white = 16.5
 ssao_enabled = true
 glow_enabled = true
+glow_intensity = 1.29
 glow_bloom = 1.0
 fog_density = 0.001
 fog_sky_affect = 0.165
 
-[sub_resource type="BoxMesh" id="BoxMesh_wicfy"]
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_go42g"]
-lightmap_size_hint = Vector2i(12, 12)
+lightmap_size_hint = Vector2i(3002, 3002)
 add_uv2 = true
+size = Vector2(600, 600)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_2gju5"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rlkm5"]
+resource_local_to_scene = true
+shader = ExtResource("1_2gju5")
+shader_parameter/bits = 1
+shader_parameter/dithering = true
+shader_parameter/SCREEN_TEXTURE = SubResource("ViewportTexture_2gju5")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_vbrkm"]
+viewport_path = NodePath("SubViewport")
 
 [node name="Node3D" type="Node3D" unique_id=1591878142]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=705581944]
 environment = SubResource("Environment_cguwc")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment" unique_id=1932217599]
-mesh = SubResource("BoxMesh_wicfy")
-
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="WorldEnvironment" unique_id=2052072014]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45338643, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24999416, -0.4533862, -2.4260414)
 mesh = SubResource("PlaneMesh_go42g")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=199247908]
-transform = Transform3D(-0.0698598, 0.89988196, 0.43050206, 0.65034246, -0.28615373, 0.70368385, 0.75642216, 0.32913297, -0.5652407, 2.4063735, 1.0138439, -2.5691571)
-light_bake_mode = 1
-shadow_enabled = true
+[node name="Control" type="Control" parent="." unique_id=846550873]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -240.0
+offset_right = 320.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1108495425]
-transform = Transform3D(0.47104594, -0.24533018, 0.84730685, 0, 0.960547, 0.27811787, -0.8821087, -0.13100629, 0.45246175, 2.9351501, 1.0518103, 1.722227)
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=538936456]
+material = SubResource("ShaderMaterial_rlkm5")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_vbrkm")
+
+[node name="Control" type="Control" parent="Control" unique_id=1924246674]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Control" unique_id=1313580855]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_nb1wl")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=2027227450]
+size = Vector2i(640, 480)
+
+[node name="ViewportCamera" type="Camera3D" parent="SubViewport" unique_id=337996459 node_paths=PackedStringArray("Target")]
+script = ExtResource("2_n77mx")
+Target = NodePath("../../GameplayCameraTarget")
+
+[node name="GameplayCameraTarget" type="Node3D" parent="." unique_id=227431029]
+script = ExtResource("2_rlkm5")
+metadata/_custom_type_script = "uid://c0ll2xp2airrq"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=646619755]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9055967, 0, -0.18576872)
+light_color = Color(1, 0, 0, 1)
+omni_range = 1.361
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=961573390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3704266, 0, -0.3406431)
+light_color = Color(0, 0, 1, 1)
+omni_range = 1.361
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=2089563020]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9647018, 0.10134578, 2.9372773)
+light_color = Color(0, 1, 0, 1)
+omni_range = 1.361
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=1715078478]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.910665, -2.3841858e-07, 3.4967327)
+light_color = Color(0, 1, 1, 1)
+omni_range = 1.361
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="." unique_id=782638412]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.580451, 0, 0.1561315)
+light_color = Color(1, 0, 1, 1)
+omni_range = 1.361
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="." unique_id=1371423868]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6704845, 0, -1.2353959)
+light_color = Color(1, 1, 0, 1)
+omni_range = 1.361
