@@ -37,11 +37,12 @@ enabled=PackedStringArray("res://addons/DragAndDrop3D/plugin.cfg", "res://addons
 
 folder_colors={
 "res://fonts/": "gray",
-"res://materials/": "orange",
+"res://materials/": "red",
 "res://scenes/": "green",
 "res://scripting/": "purple",
 "res://shaders/": "pink",
-"res://subscenes/": "blue"
+"res://subscenes/": "blue",
+"res://textures/": "orange"
 }
 
 [physics]
@@ -51,5 +52,3 @@ folder_colors={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"

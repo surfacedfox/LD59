@@ -1,37 +1,25 @@
 shader_type canvas_item;
 
-uniform int bits = 5;
-uniform bool dithering = true;
-uniform sampler2D SCREEN_TEXTURE : filter_linear_mipmap;
-
-float dither4x4(vec2 position) {
-    int x = int(mod(position.x, 4.0));
-    int y = int(mod(position.y, 4.0));
-
-    int index = x + y * 4;
-
-    float[16] matrix = float[](
-        0.0, 8.0, 2.0, 10.0,
-        12.0, 4.0, 14.0, 6.0,
-        3.0, 11.0, 1.0, 9.0,
-        15.0, 7.0, 13.0, 5.0
-    );
-
-    return matrix[index] / 16.0;
-}
+uniform vec2 size = vec2(32.0, 28.0);
+// If you intend to read from mipmaps with `textureLod()` LOD values greater than `0.0`,
+// use `filter_nearest_mipmap` instead. This shader doesn't require it.
+uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
 
 void fragment() {
+        vec2 norm_size = size * SCREEN_PIXEL_SIZE;
+        bool less_than_half = mod(SCREEN_UV.y / 2.0, norm_size.y) / norm_size.y < 0.5;
+        vec2 uv = SCREEN_UV + vec2(norm_size.x * 0.5 * float(less_than_half), 0.0);
+        vec2 center_uv = floor(uv / norm_size) * norm_size;
+        vec2 norm_uv = mod(uv, norm_size) / norm_size;
+        center_uv += mix(vec2(0.0, 0.0),
+                         mix(mix(vec2(norm_size.x, -norm_size.y),
+                                 vec2(0.0, -norm_size.y),
+                                 float(norm_uv.x < 0.5)),
+                             mix(vec2(0.0, -norm_size.y),
+                                 vec2(-norm_size.x, -norm_size.y),
+                                 float(norm_uv.x < 0.5)),
+                             float(less_than_half)),
+                         float(norm_uv.y < 0.3333333) * float(norm_uv.y / 0.3333333 < (abs(norm_uv.x - 0.5) * 2.0)));
 
-    vec4 col = texture(SCREEN_TEXTURE, SCREEN_UV);
-
-    float levels = float(1 << bits);
-
-    if (dithering) {
-        float d = dither4x4(FRAGCOORD.xy);
-        col.rgb += d / levels;
-    }
-
-    col.rgb = floor(col.rgb * levels) / levels;
-
-    COLOR = col;
+        COLOR = textureLod(screen_texture, center_uv, 0.0);
 }

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dqnprgoxue3d7"]
 
 [ext_resource type="Shader" uid="uid://0c7eiw1fff0p" path="res://shaders/screendither.gdshader" id="1_2gju5"]
-[ext_resource type="Script" uid="uid://cnlnucyuwtdfc" path="res://scripting/copy_transform.gd" id="2_n77mx"]
 [ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="2_nb1wl"]
 [ext_resource type="Script" uid="uid://c0ll2xp2airrq" path="res://camera.gd" id="2_rlkm5"]
 [ext_resource type="PackedScene" uid="uid://dpjhpfkk3hukq" path="res://addons/DragAndDrop3D/nodes/DragAndDrop3D.tscn" id="5_fws1a"]
+[ext_resource type="Texture2D" uid="uid://b44hhcof0m7cc" path="res://textures/shape_g.png" id="6_fws1a"]
 [ext_resource type="PackedScene" uid="uid://c3i6b7ijjxudc" path="res://addons/DragAndDrop3D/nodes/DraggingObject3D.tscn" id="6_xpysu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pn5b2"]
@@ -23,17 +23,9 @@ glow_bloom = 1.0
 fog_density = 0.001
 fog_sky_affect = 0.165
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_m5dm6"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rlkm5"]
-resource_local_to_scene = true
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m5dm6"]
 shader = ExtResource("1_2gju5")
-shader_parameter/bits = 1
-shader_parameter/dithering = true
-shader_parameter/SCREEN_TEXTURE = SubResource("ViewportTexture_m5dm6")
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_vbrkm"]
-viewport_path = NodePath("SubViewport")
+shader_parameter/size = Vector2(16, 9)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_go42g"]
 lightmap_size_hint = Vector2i(3002, 3002)
@@ -60,8 +52,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control" unique_id=538936456]
-material = SubResource("ShaderMaterial_rlkm5")
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1892829356]
+material = SubResource("ShaderMaterial_m5dm6")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -69,8 +61,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = SubResource("ViewportTexture_vbrkm")
-script = ExtResource("2_n77mx")
 
 [node name="Control" type="Control" parent="Control" unique_id=1924246674]
 z_index = 1
@@ -110,29 +100,62 @@ snapOverlap = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.025, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Red" unique_id=1067290166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29956794, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Red/StaticBody3D" unique_id=142490311]
 shape = SubResource("SphereShape3D_fws1a")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Red/StaticBody3D" unique_id=646619755]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+[node name="OmniLight3D" type="SpotLight3D" parent="Red/StaticBody3D" unique_id=1040402282]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.42557964, 0)
 light_color = Color(1, 0, 0, 1)
-omni_range = 0.412
-omni_attenuation = -0.067
+light_energy = 2.28
+light_projector = ExtResource("6_fws1a")
+shadow_enabled = true
 
-[node name="Green" parent="." unique_id=721555349 instance=ExtResource("6_xpysu")]
+[node name="Red2" parent="." unique_id=721555349 instance=ExtResource("6_xpysu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.025, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Red2" unique_id=452013361]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29956794, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Red2/StaticBody3D" unique_id=1205513367]
+shape = SubResource("SphereShape3D_fws1a")
+
+[node name="OmniLight3D" type="SpotLight3D" parent="Red2/StaticBody3D" unique_id=1367322357]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.42557964, 0)
+light_color = Color(1, 0, 0, 1)
+light_energy = 2.28
+light_projector = ExtResource("6_fws1a")
+shadow_enabled = true
+
+[node name="Green" parent="." unique_id=390472145 instance=ExtResource("6_xpysu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14839196, 0.025, 0.70075303)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Green" unique_id=570589997]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Green/StaticBody3D" unique_id=826349922]
 shape = SubResource("SphereShape3D_fws1a")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Green/StaticBody3D" unique_id=1820233202]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+[node name="OmniLight3D" type="SpotLight3D" parent="Green/StaticBody3D" unique_id=58809059]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.3251967, 0)
 light_color = Color(0, 1, 0, 1)
-omni_range = 0.412
-omni_attenuation = -0.067
+light_projector = ExtResource("6_fws1a")
+shadow_enabled = true
+
+[node name="Blue" parent="." unique_id=694794384 instance=ExtResource("6_xpysu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2249229, 0.025, 0.6761306)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Blue" unique_id=413889134]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blue/StaticBody3D" unique_id=585171983]
+shape = SubResource("SphereShape3D_fws1a")
+
+[node name="OmniLight3D" type="SpotLight3D" parent="Blue/StaticBody3D" unique_id=2001562906]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.3251967, 0)
+light_color = Color(0, 0.23137255, 1, 1)
+light_energy = 3.88
+light_projector = ExtResource("6_fws1a")
+shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=337301423]
 transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, 1, 0)
