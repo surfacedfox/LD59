@@ -2,7 +2,7 @@ extends Control
 
 
 @onready var dialogue_box: DialogueBox = $DialogueBox
-@onready var audio_player = $AudioStreamPlayer
+@onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
 var rng = RandomNumberGenerator.new()
 
 
@@ -20,4 +20,5 @@ func _process(delta: float) -> void:
 func _on_char_displayed(idx: int):
 	if idx % 4 == 0:
 		if rng.randf() < 0.67:
+			self.audio_player.pitch_scale = rng.randf_range(0.7, 0.8)
 			self.audio_player.play()
