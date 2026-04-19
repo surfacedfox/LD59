@@ -3,7 +3,7 @@
 [ext_resource type="Shader" uid="uid://0c7eiw1fff0p" path="res://shaders/screendither.gdshader" id="1_650nl"]
 [ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="2_t51eu"]
 [ext_resource type="Script" uid="uid://c0ll2xp2airrq" path="res://camera.gd" id="3_pl037"]
-[ext_resource type="PackedScene" uid="uid://b3f6uxxuphf22" path="res://scenes/MovingGame.tscn" id="4_2scg0"]
+[ext_resource type="PackedScene" uid="uid://b3f6uxxuphf22" path="res://subscenes/MovingGame.tscn" id="4_2scg0"]
 [ext_resource type="Script" uid="uid://bjt8pgx5ieboo" path="res://addons/DragAndDrop3D/nodes/drag_and_drop_3d.gd" id="4_t51eu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pn5b2"]

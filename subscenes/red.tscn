@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bnpat1gq3011s"]
+
+[ext_resource type="Script" uid="uid://cv7d03i22ga7n" path="res://addons/DragAndDrop3D/nodes/dragging_object_3d.gd" id="1_0tyna"]
+[ext_resource type="Texture2D" uid="uid://b44hhcof0m7cc" path="res://textures/shape_g.png" id="2_ob7gb"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fws1a"]
+radius = 0.356
+
+[node name="Red" type="Node3D" unique_id=2096041457]
+script = ExtResource("1_0tyna")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1962131924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29956794, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1539297559]
+shape = SubResource("SphereShape3D_fws1a")
+
+[node name="OmniLight3D" type="SpotLight3D" parent="StaticBody3D" unique_id=113384868]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.42557964, 0)
+light_color = Color(1, 0, 0, 1)
+light_energy = 2.28
+light_projector = ExtResource("2_ob7gb")
+shadow_enabled = true

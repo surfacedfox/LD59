@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://dqnprgoxue3d7"]
 
 [ext_resource type="Shader" uid="uid://0c7eiw1fff0p" path="res://shaders/screendither.gdshader" id="1_2gju5"]
+[ext_resource type="Script" uid="uid://cd54r7cg7a448" path="res://scenes/test_scene.gd" id="1_m5dm6"]
 [ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="2_nb1wl"]
 [ext_resource type="Script" uid="uid://c0ll2xp2airrq" path="res://camera.gd" id="2_rlkm5"]
 [ext_resource type="PackedScene" uid="uid://dpjhpfkk3hukq" path="res://addons/DragAndDrop3D/nodes/DragAndDrop3D.tscn" id="5_fws1a"]
-[ext_resource type="Texture2D" uid="uid://b44hhcof0m7cc" path="res://textures/shape_g.png" id="6_fws1a"]
-[ext_resource type="PackedScene" uid="uid://c3i6b7ijjxudc" path="res://addons/DragAndDrop3D/nodes/DraggingObject3D.tscn" id="6_xpysu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pn5b2"]
 
@@ -35,10 +34,8 @@ size = Vector2(600, 600)
 [sub_resource type="BoxShape3D" id="BoxShape3D_nb1wl"]
 size = Vector3(600, 0.05, 600)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_fws1a"]
-radius = 0.356
-
 [node name="Node3D" type="Node3D" unique_id=1591878142]
+script = ExtResource("1_m5dm6")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=705581944]
 environment = SubResource("Environment_cguwc")
@@ -95,67 +92,6 @@ shape = SubResource("BoxShape3D_nb1wl")
 [node name="DragAndDrop3d" parent="." unique_id=1460727689 instance=ExtResource("5_fws1a")]
 useSnap = true
 snapOverlap = true
-
-[node name="Red" parent="." unique_id=1273258037 instance=ExtResource("6_xpysu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.025, 0)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Red" unique_id=1067290166]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29956794, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Red/StaticBody3D" unique_id=142490311]
-shape = SubResource("SphereShape3D_fws1a")
-
-[node name="OmniLight3D" type="SpotLight3D" parent="Red/StaticBody3D" unique_id=1040402282]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.42557964, 0)
-light_color = Color(1, 0, 0, 1)
-light_energy = 2.28
-light_projector = ExtResource("6_fws1a")
-shadow_enabled = true
-
-[node name="Red2" parent="." unique_id=721555349 instance=ExtResource("6_xpysu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.025, 0)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Red2" unique_id=452013361]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29956794, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Red2/StaticBody3D" unique_id=1205513367]
-shape = SubResource("SphereShape3D_fws1a")
-
-[node name="OmniLight3D" type="SpotLight3D" parent="Red2/StaticBody3D" unique_id=1367322357]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.42557964, 0)
-light_color = Color(1, 0, 0, 1)
-light_energy = 2.28
-light_projector = ExtResource("6_fws1a")
-shadow_enabled = true
-
-[node name="Green" parent="." unique_id=390472145 instance=ExtResource("6_xpysu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14839196, 0.025, 0.70075303)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Green" unique_id=570589997]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Green/StaticBody3D" unique_id=826349922]
-shape = SubResource("SphereShape3D_fws1a")
-
-[node name="OmniLight3D" type="SpotLight3D" parent="Green/StaticBody3D" unique_id=58809059]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.3251967, 0)
-light_color = Color(0, 1, 0, 1)
-light_projector = ExtResource("6_fws1a")
-shadow_enabled = true
-
-[node name="Blue" parent="." unique_id=694794384 instance=ExtResource("6_xpysu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2249229, 0.025, 0.6761306)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Blue" unique_id=413889134]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Blue/StaticBody3D" unique_id=585171983]
-shape = SubResource("SphereShape3D_fws1a")
-
-[node name="OmniLight3D" type="SpotLight3D" parent="Blue/StaticBody3D" unique_id=2001562906]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.3251967, 0)
-light_color = Color(0, 0.23137255, 1, 1)
-light_energy = 3.88
-light_projector = ExtResource("6_fws1a")
-shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=337301423]
 transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, 1, 0)
