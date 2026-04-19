@@ -2,6 +2,9 @@
 class_name GenericLight extends DraggingObject3D
 
 
+@export var light_parameters: LightParameters
+
+
 @onready var light_node: SpotLight3D = get_node("body/light")
 
 
@@ -10,6 +13,7 @@ func _ready() -> void:
 	super()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	self.light_node.light_projector = self.light_parameters.light_projector
+	self.light_node.light_color = self.light_parameters.light_color
+	self.light_node.light_energy = self.light_parameters.light_energy
