@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://d1ic3qhrquqpn" path="res://scripting/test_scene.gd" id="1_nb1wl"]
 [ext_resource type="Script" uid="uid://c0ll2xp2airrq" path="res://camera.gd" id="2_rlkm5"]
 [ext_resource type="PackedScene" uid="uid://dpjhpfkk3hukq" path="res://addons/DragAndDrop3D/nodes/DragAndDrop3D.tscn" id="5_fws1a"]
+[ext_resource type="Script" uid="uid://cv7d03i22ga7n" path="res://addons/DragAndDrop3D/nodes/dragging_object_3d.gd" id="5_xpysu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pn5b2"]
 
@@ -23,7 +24,9 @@ fog_sky_affect = 0.165
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m5dm6"]
 shader = ExtResource("1_2gju5")
-shader_parameter/size = Vector2(16, 9)
+shader_parameter/dot_size = 4.000000095
+shader_parameter/threshold = 0.0
+shader_parameter/bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_go42g"]
 lightmap_size_hint = Vector2i(3002, 3002)
@@ -32,6 +35,9 @@ size = Vector2(600, 600)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nb1wl"]
 size = Vector3(600, 0.05, 600)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fws1a"]
+radius = 0.356
 
 [node name="Node3D" type="Node3D" unique_id=1591878142]
 script = ExtResource("1_nb1wl")
@@ -78,3 +84,18 @@ snapOverlap = true
 transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, 1, 0)
 current = true
 script = ExtResource("2_rlkm5")
+
+[node name="Red" type="Node3D" parent="." unique_id=2096041457]
+script = ExtResource("5_xpysu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Red" unique_id=1962131924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29956794, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Red/StaticBody3D" unique_id=1539297559]
+shape = SubResource("SphereShape3D_fws1a")
+
+[node name="OmniLight3D" type="SpotLight3D" parent="Red/StaticBody3D" unique_id=113384868]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.42557964, 0)
+light_color = Color(0.06762838, 1, 0, 1)
+light_energy = 0.467
+shadow_enabled = true

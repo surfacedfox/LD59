@@ -33,7 +33,8 @@ func _ready() -> void:
 func _set_group() -> void:
 	if Engine.is_editor_hint(): return
 	
-	await get_tree().current_scene.ready
+	if not get_tree().current_scene.is_node_ready():
+		await get_tree().current_scene.ready
 	DragAndDropGroupHelper.add_node_to_group(self, "draggingObjects")
 
 func _set_default_snap_position() -> void:
@@ -41,8 +42,9 @@ func _set_default_snap_position() -> void:
 	snapPosition = Vector3(global_position.x, global_position.y - get_height_offset() , global_position.z)
 
 func _set_late_signals() -> void:
-	await get_tree().current_scene.ready
-	
+	if not get_tree().current_scene.is_node_ready():
+		await get_tree().current_scene.ready
+
 	var dragAndDrop3D: DragAndDrop3D = get_tree().get_first_node_in_group("DragAndDrop3D")
 	dragAndDrop3D.dragging_started.connect(_is_dragging.bind(true))
 	dragAndDrop3D.dragging_stopped.connect(_is_dragging.bind(false))
@@ -56,14 +58,17 @@ func _get_object_body() -> CollisionObject3D:
 func _is_dragging(draggingObject, boolean) -> void:
 	if not draggingObject == self: return
 	
-	if boolean: dragging_started.emit()
-	else: dragging_stopped.emit()
+	if boolean: 
+		dragging_started.emit()
+	else: 
+		dragging_stopped.emit()
 
 func _on_object_body_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		var leftClicked = event.button_index == 1 and event.is_pressed()
 		
-		if leftClicked: object_body_mouse_down.emit()
+		if leftClicked:
+			object_body_mouse_down.emit()
 
 func get_rid() -> RID:
 	return objectBody.get_rid()
