@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LightParameters" format=3 uid="uid://dlhp2irjgenai"]
+
+[ext_resource type="Texture2D" uid="uid://cbxu1keuyt86c" path="res://textures/shape_d.png" id="1_e7jk1"]
+[ext_resource type="Script" uid="uid://04dxg81f8hp7" path="res://addons/LD59Core/ResourceDefinitions/LightParameters.gd" id="2_xmecj"]
+
+[resource]
+script = ExtResource("2_xmecj")
+light_projector = ExtResource("1_e7jk1")
+light_color = Color(0, 1, 0, 1)
+light_energy = 1.1
+metadata/_custom_type_script = "uid://04dxg81f8hp7"
