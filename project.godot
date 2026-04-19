@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 DebugMenu="*uid://cggqb75a8w8r"
 DragAndDropGroupHelper="*uid://c37ib3yi2l8bc"
+TextureStore="*uid://cyueat2cbprih"
 
 [display]
 
