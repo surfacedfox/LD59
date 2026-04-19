@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 DebugMenu="*uid://cggqb75a8w8r"
 DragAndDropGroupHelper="*uid://c37ib3yi2l8bc"
+TextureStore="*uid://cyueat2cbprih"
+GameMaster="*uid://cqjxpe4emtnyo"
 
 [display]
 
@@ -31,7 +33,7 @@ project/assembly_name="LD59"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/DragAndDrop3D/plugin.cfg", "res://addons/debug_menu/plugin.cfg", "res://addons/dialogue_nodes/plugin.cfg")
+enabled=PackedStringArray("res://addons/DragAndDrop3D/plugin.cfg", "res://addons/LD59Core/plugin.cfg", "res://addons/debug_menu/plugin.cfg", "res://addons/dialogue_nodes/plugin.cfg", "res://addons/multipoint_gradient_godot/plugin.cfg")
 
 [file_customization]
 

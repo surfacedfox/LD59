@@ -39,7 +39,8 @@ func _ready() -> void:
 func _set_group() -> void:
 	if Engine.is_editor_hint(): return
 	
-	await get_tree().current_scene.ready
+	if not get_tree().current_scene.is_node_ready():
+		await get_tree().current_scene.ready
 	DragAndDropGroupHelper.add_node_to_group(self, "DragAndDrop3D")
 
 func _set_dragging_object_signals(group: String, node: Node) -> void:
@@ -57,6 +58,7 @@ func _input(event: InputEvent) -> void:
 			stop_drag()
 	elif event is InputEventMouseMotion:
 		if _currentDraggingObject: 
+			print("DOBJ handling drag")
 			_handle_drag()
 			
 func stop_drag() -> void:
