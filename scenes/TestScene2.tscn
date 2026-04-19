@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://dl5wl0wh1f1ib"]
+
+[ext_resource type="Shader" uid="uid://0c7eiw1fff0p" path="res://shaders/screendither.gdshader" id="1_650nl"]
+[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="2_t51eu"]
+[ext_resource type="Script" uid="uid://c0ll2xp2airrq" path="res://camera.gd" id="3_pl037"]
+[ext_resource type="PackedScene" uid="uid://b3f6uxxuphf22" path="res://scenes/MovingGame.tscn" id="4_2scg0"]
+[ext_resource type="Script" uid="uid://bjt8pgx5ieboo" path="res://addons/DragAndDrop3D/nodes/drag_and_drop_3d.gd" id="4_t51eu"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pn5b2"]
+
+[sub_resource type="Sky" id="Sky_mncer"]
+sky_material = SubResource("ProceduralSkyMaterial_pn5b2")
+
+[sub_resource type="Environment" id="Environment_cguwc"]
+background_energy_multiplier = 0.0
+sky = SubResource("Sky_mncer")
+tonemap_mode = 3
+tonemap_agx_white = 16.5
+ssao_enabled = true
+glow_intensity = 1.29
+glow_bloom = 1.0
+fog_density = 0.001
+fog_sky_affect = 0.165
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m5dm6"]
+shader = ExtResource("1_650nl")
+shader_parameter/size = Vector2(16, 9)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_go42g"]
+lightmap_size_hint = Vector2i(3002, 3002)
+add_uv2 = true
+size = Vector2(600, 600)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nb1wl"]
+size = Vector3(600, 0.05, 600)
+
+[node name="Node3D" type="Node3D" unique_id=1591878142]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=705581944]
+environment = SubResource("Environment_cguwc")
+
+[node name="Control" type="Control" parent="." unique_id=846550873]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1892829356]
+material = SubResource("ShaderMaterial_m5dm6")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="Control" unique_id=1924246674]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Control" unique_id=1313580855]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+mouse_filter = 2
+texture = ExtResource("2_t51eu")
+expand_mode = 1
+
+[node name="GameplayCameraTarget" type="Node3D" parent="." unique_id=227431029]
+script = ExtResource("3_pl037")
+metadata/_custom_type_script = "uid://c0ll2xp2airrq"
+
+[node name="DragAndDrop3D" type="Node3D" parent="." unique_id=276487380]
+script = ExtResource("4_t51eu")
+useSnap = true
+snapOverlap = true
+metadata/_custom_type_script = "uid://bjt8pgx5ieboo"
+
+[node name="MovingGame" parent="." unique_id=2042369218 instance=ExtResource("4_2scg0")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1092976673]
+
+[node name="BGPlane" type="MeshInstance3D" parent="StaticBody3D" unique_id=2052072014]
+mesh = SubResource("PlaneMesh_go42g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=863579293]
+shape = SubResource("BoxShape3D_nb1wl")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=337301423]
+transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, 1, 0)
+current = true
+script = ExtResource("3_pl037")
