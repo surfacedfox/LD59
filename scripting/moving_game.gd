@@ -1,7 +1,7 @@
 extends Node3D
 
 
-const GENERIC_LIGHT = preload("res://scenes/GenericLight.tscn")
+const GENERIC_LIGHT = preload("res://subscenes/GenericLight.tscn")
 var light_configs: Array[Callable] = []
 
 var draggable_lights_by_config: Dictionary[int, Array] # Array[GenericLight]
@@ -16,27 +16,7 @@ var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	light_configs.push_back(func(light: GenericLight):
-		light.light_node.light_projector = TextureStore.textures["shape_e"]
-		light.light_node.light_color = Color(1.0, 0.0, 0.0)
-		light.light_node.light_energy = 2.28
-		return light
-	)
-	light_configs.push_back(func(light: GenericLight):
-		light.light_node.light_projector = TextureStore.textures["shape_c"]
-		light.light_node.light_color = Color(0.0, 1.0, 0.0)
-		light.light_node.light_energy = 4
-		return light
-	)
-	light_configs.push_back(func(light: GenericLight):
-		light.light_node.light_projector = TextureStore.textures["shape_b"]
-		light.light_node.light_color = Color(0.0, 0.0, 1.0)
-		light.light_node.light_energy = 1.5
-		return light
-	)
-
 	number_of_lights = 3
-
 	create_game()
 
 

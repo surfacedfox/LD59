@@ -5,6 +5,12 @@ uniform float threshold : hint_range(0.0, 1.0) = 0.0;
 uniform vec4 bg_color : source_color = vec4(1.0, 1.0, 1.0, 1.0);
 uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
 
+uniform sampler2D noise;
+uniform float slow = 25.0;
+uniform float multiplier = 0.5;
+uniform float contrast = 2.0;
+
+
 void fragment() {
 	vec2 pixel_pos = SCREEN_UV / SCREEN_PIXEL_SIZE;
 	vec2 cell = floor(pixel_pos / dot_size);
@@ -18,5 +24,7 @@ void fragment() {
 	float dist = length(cell_uv);
 
 	float blend = smoothstep(radius, radius - 0.05, dist);
-	COLOR = mix(bg_color, sampled, blend);
+	vec4 noise_sample = texture(noise, texture(noise, UV).xy + mod(TIME, 1.0) / slow);
+	noise_sample.rgb = pow(noise_sample.rgb, vec3(contrast));
+	COLOR = mix(bg_color, sampled, blend) + (noise_sample * multiplier);
 }
