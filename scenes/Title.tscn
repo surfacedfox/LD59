@@ -12,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+mouse_behavior_recursive = 1
 script = ExtResource("1_ascc0")
 
 [node name="NextButton" type="Button" parent="Control" unique_id=1818341857]
@@ -28,4 +29,5 @@ offset_right = -10.0
 offset_bottom = -10.0
 grow_horizontal = 0
 grow_vertical = 0
+mouse_behavior_recursive = 2
 text = "Next Scene"

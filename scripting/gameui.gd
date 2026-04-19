@@ -4,10 +4,10 @@ var nextButton : Button
 var num : int = 0
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	GameMaster.changeScene(num)
+func _ready() -> void:	
 	nextButton = get_node("%NextButton")
 	nextButton.pressed.connect(_next_pressed)
+	#GameMaster.changeScene(num)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
