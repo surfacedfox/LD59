@@ -70,8 +70,7 @@ func create_game() -> void:
 		solution_light_object.transform.origin.z = solnz
 		solution_light_config.call(solution_light_object)
 		solution_light_object.light_node.light_color = Color(0.3, 0.3, 0.3)
-
-	print(draggable_lights_container.get_children())
+		solution_light_object.input_ray_pickable = false
 
 
 func _on_set_num_lights_f(value: float) -> void:

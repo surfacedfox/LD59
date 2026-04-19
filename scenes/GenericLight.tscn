@@ -1,16 +1,19 @@
 [gd_scene format=3 uid="uid://djy26kqj6lnvw"]
 
-[ext_resource type="Script" uid="uid://6m6tuawb3upu" path="res://scripting/generic_light.gd" id="1_bnc21"]
+[ext_resource type="Script" uid="uid://6m6tuawb3upu" path="res://scripting/generic_light.gd" id="2_vpt8d"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_lyiwk"]
 radius = 0.356
 
-[node name="GenericLight" type="StaticBody3D" unique_id=766500404]
-script = ExtResource("1_bnc21")
+[node name="DraggingObject3D" type="Node3D" unique_id=413550196]
+script = ExtResource("2_vpt8d")
+metadata/_custom_type_script = "uid://cv7d03i22ga7n"
 
-[node name="shape" type="CollisionShape3D" parent="." unique_id=183425181]
+[node name="body" type="StaticBody3D" parent="." unique_id=766500404]
+
+[node name="shape" type="CollisionShape3D" parent="body" unique_id=183425181]
 shape = SubResource("SphereShape3D_lyiwk")
 
-[node name="light" type="SpotLight3D" parent="." unique_id=1106732581]
+[node name="light" type="SpotLight3D" parent="body" unique_id=1106732581]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.426, 0)
 shadow_enabled = true

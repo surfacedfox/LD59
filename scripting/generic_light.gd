@@ -1,7 +1,8 @@
-class_name GenericLight extends Node
+@tool
+class_name GenericLight extends DraggingObject3D
 
 
-@onready var light_node: SpotLight3D = get_node("light")
+@onready var light_node: SpotLight3D = get_node("body/light")
 
 
 # Called when the node enters the scene tree for the first time.
