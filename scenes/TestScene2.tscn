@@ -3,8 +3,12 @@
 [ext_resource type="Shader" uid="uid://0c7eiw1fff0p" path="res://shaders/screendither.gdshader" id="1_650nl"]
 [ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="2_t51eu"]
 [ext_resource type="Script" uid="uid://c0ll2xp2airrq" path="res://camera.gd" id="3_pl037"]
+[ext_resource type="Script" uid="uid://csqie6s2s3cbh" path="res://addons/multipoint_gradient_godot/gradient_point.gd" id="3_t51eu"]
 [ext_resource type="PackedScene" uid="uid://b3f6uxxuphf22" path="res://subscenes/MovingGame.tscn" id="4_2scg0"]
+[ext_resource type="Script" uid="uid://dtsnbdmaug28q" path="res://addons/multipoint_gradient_godot/multipoint_gradient_2d.gd" id="4_pl037"]
 [ext_resource type="Script" uid="uid://bjt8pgx5ieboo" path="res://addons/DragAndDrop3D/nodes/drag_and_drop_3d.gd" id="4_t51eu"]
+[ext_resource type="Script" uid="uid://cv7d03i22ga7n" path="res://addons/DragAndDrop3D/nodes/dragging_object_3d.gd" id="6_jqscq"]
+[ext_resource type="Texture2D" uid="uid://b44hhcof0m7cc" path="res://textures/shape_g.png" id="7_650nl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pn5b2"]
 
@@ -26,6 +30,32 @@ fog_sky_affect = 0.165
 shader = ExtResource("1_650nl")
 shader_parameter/size = Vector2(16, 9)
 
+[sub_resource type="Resource" id="Resource_qij1f"]
+script = ExtResource("3_t51eu")
+position = Vector2(0.123333335, 0.1)
+color = Color(1, 0, 0, 1)
+weight = 15.125
+
+[sub_resource type="Resource" id="Resource_mts5n"]
+script = ExtResource("3_t51eu")
+position = Vector2(0.81666666, 0.016666668)
+color = Color(0, 1, 0, 1)
+weight = 4.965
+
+[sub_resource type="Resource" id="Resource_7b41l"]
+script = ExtResource("3_t51eu")
+position = Vector2(0.48999995, 0.6733333)
+color = Color(0, 0, 1, 1)
+weight = 4.95
+
+[sub_resource type="Texture2D" id="Texture2D_s1tcx"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("4_pl037")
+points = Array[ExtResource("3_t51eu")]([SubResource("Resource_qij1f"), SubResource("Resource_mts5n"), SubResource("Resource_7b41l")])
+falloff_mode = 2
+metadata/_custom_type_script = "uid://dtsnbdmaug28q"
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_go42g"]
 lightmap_size_hint = Vector2i(3002, 3002)
 add_uv2 = true
@@ -33,6 +63,9 @@ size = Vector2(600, 600)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nb1wl"]
 size = Vector3(600, 0.05, 600)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fws1a"]
+radius = 0.356
 
 [node name="Node3D" type="Node3D" unique_id=1591878142]
 
@@ -76,6 +109,14 @@ mouse_filter = 2
 texture = ExtResource("2_t51eu")
 expand_mode = 1
 
+[node name="ColorRect2" type="TextureRect" parent="Control" unique_id=263898241]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 296.0
+offset_right = 471.0
+offset_bottom = 552.0
+texture = SubResource("Texture2D_s1tcx")
+
 [node name="GameplayCameraTarget" type="Node3D" parent="." unique_id=227431029]
 script = ExtResource("3_pl037")
 metadata/_custom_type_script = "uid://c0ll2xp2airrq"
@@ -100,3 +141,49 @@ shape = SubResource("BoxShape3D_nb1wl")
 transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, 1, 0)
 current = true
 script = ExtResource("3_pl037")
+
+[node name="Red" type="Node3D" parent="." unique_id=2096041457]
+script = ExtResource("6_jqscq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Red" unique_id=1962131924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29956794, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Red/StaticBody3D" unique_id=1539297559]
+shape = SubResource("SphereShape3D_fws1a")
+
+[node name="OmniLight3D" type="SpotLight3D" parent="Red/StaticBody3D" unique_id=113384868]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.42557964, 0)
+light_color = Color(1, 0, 0, 1)
+light_energy = 2.28
+light_projector = ExtResource("7_650nl")
+shadow_enabled = true
+
+[node name="Red2" type="Node3D" parent="." unique_id=618585994]
+script = ExtResource("6_jqscq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Red2" unique_id=941610242]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29956794, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Red2/StaticBody3D" unique_id=1991525207]
+shape = SubResource("SphereShape3D_fws1a")
+
+[node name="OmniLight3D" type="SpotLight3D" parent="Red2/StaticBody3D" unique_id=533061453]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.15204757, 0.42557964, -1.0646449)
+light_color = Color(0.21720988, 0.21720988, 0.21720988, 1)
+light_energy = 2.28
+light_projector = ExtResource("7_650nl")
+shadow_enabled = true
+
+[node name="OmniLight3D2" type="SpotLight3D" parent="Red2/StaticBody3D" unique_id=838551365]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.24086887, 0.42557964, -0.9488193)
+light_color = Color(0.21720988, 0.21720988, 0.21720988, 1)
+light_energy = 2.28
+light_projector = ExtResource("7_650nl")
+shadow_enabled = true
+
+[node name="OmniLight3D3" type="SpotLight3D" parent="Red2/StaticBody3D" unique_id=617435531]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.20992619, 0.42557964, -1.0344108)
+light_color = Color(0.21720988, 0.21720988, 0.21720988, 1)
+light_energy = 2.28
+light_projector = ExtResource("7_650nl")
+shadow_enabled = true

@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://dqnprgoxue3d7"]
 
 [ext_resource type="Shader" uid="uid://0c7eiw1fff0p" path="res://shaders/screendither.gdshader" id="1_2gju5"]
-[ext_resource type="Script" uid="uid://cd54r7cg7a448" path="res://scenes/test_scene.gd" id="1_m5dm6"]
-[ext_resource type="Texture2D" uid="uid://dxluetgnmx57p" path="res://icon.svg" id="2_nb1wl"]
+[ext_resource type="Script" uid="uid://d1ic3qhrquqpn" path="res://scripting/test_scene.gd" id="1_nb1wl"]
 [ext_resource type="Script" uid="uid://c0ll2xp2airrq" path="res://camera.gd" id="2_rlkm5"]
 [ext_resource type="PackedScene" uid="uid://dpjhpfkk3hukq" path="res://addons/DragAndDrop3D/nodes/DragAndDrop3D.tscn" id="5_fws1a"]
 
@@ -35,7 +34,7 @@ size = Vector2(600, 600)
 size = Vector3(600, 0.05, 600)
 
 [node name="Node3D" type="Node3D" unique_id=1591878142]
-script = ExtResource("1_m5dm6")
+script = ExtResource("1_nb1wl")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=705581944]
 environment = SubResource("Environment_cguwc")
@@ -58,24 +57,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="Control" type="Control" parent="Control" unique_id=1924246674]
-z_index = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="TextureRect" type="TextureRect" parent="Control/Control" unique_id=1313580855]
-layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-mouse_filter = 2
-texture = ExtResource("2_nb1wl")
-expand_mode = 1
 
 [node name="GameplayCameraTarget" type="Node3D" parent="." unique_id=227431029]
 script = ExtResource("2_rlkm5")
