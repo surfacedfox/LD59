@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CharacterList" format=3 uid="uid://b0288qoo7074v"]
+
+[ext_resource type="Script" uid="uid://g675vyv0a1ml" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_ijb7h"]
+[ext_resource type="Script" uid="uid://cp7xhmrvd3fmm" path="res://addons/dialogue_nodes/objects/CharacterList.gd" id="2_ukmkt"]
+
+[resource]
+script = ExtResource("2_ukmkt")
+metadata/_custom_type_script = "uid://cp7xhmrvd3fmm"

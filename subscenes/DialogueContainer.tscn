@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bit8osx61yrqb"]
+
+[ext_resource type="Script" uid="uid://borjv07uaspt5" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="1_dt27o"]
+[ext_resource type="Script" uid="uid://c5who025xrdk" path="res://scripting/dialogue_container.gd" id="1_qaane"]
+[ext_resource type="Script" uid="uid://hl6t53auebb7" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="2_itmfc"]
+[ext_resource type="Resource" uid="uid://c51hgejup2uib" path="res://data/test_dialogue.tres" id="2_qaane"]
+[ext_resource type="Script" uid="uid://c8jdo1qxy7g8q" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="3_qaane"]
+[ext_resource type="Script" uid="uid://b573n2i6h6lj8" path="res://addons/dialogue_nodes/objects/bbcodeMatrix.gd" id="4_eb8od"]
+[ext_resource type="AudioStream" uid="uid://dgh8uo3q6hmif" path="res://audio/eek.ogg" id="7_eb8od"]
+
+[sub_resource type="Theme" id="Theme_eb8od"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_bl1rg"]
+script = ExtResource("2_itmfc")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_5opll"]
+script = ExtResource("3_qaane")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_3sbm7"]
+script = ExtResource("4_eb8od")
+
+[node name="DialogueContainer" type="Control" unique_id=1629363781]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qaane")
+
+[node name="DialogueBox" type="Panel" parent="." unique_id=109620603]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -100.0
+offset_right = 300.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_eb8od")
+script = ExtResource("1_dt27o")
+data = ExtResource("2_qaane")
+start_id = "intro"
+custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_bl1rg"), SubResource("RichTextEffect_5opll"), SubResource("RichTextEffect_3sbm7")])
+metadata/_custom_type_script = "uid://borjv07uaspt5"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1970552971]
+stream = ExtResource("7_eb8od")
