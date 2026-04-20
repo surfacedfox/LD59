@@ -1,23 +1,8 @@
-[gd_resource type="Resource" script_class="CharacterList" format=3 uid="uid://dpt46dl4hda2w"]
+[gd_resource type="Resource" script_class="CharacterList" format=3 uid="uid://b0288qoo7074v"]
 
 [ext_resource type="Script" uid="uid://g675vyv0a1ml" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_ijb7h"]
-[ext_resource type="Texture2D" uid="uid://b8n42befbgctt" path="res://art/sprites/juno.png" id="2_minn2"]
 [ext_resource type="Script" uid="uid://cp7xhmrvd3fmm" path="res://addons/dialogue_nodes/objects/CharacterList.gd" id="2_ukmkt"]
-[ext_resource type="Texture2D" uid="uid://bj7lbk4x75qd7" path="res://art/sprites/cass.png" id="3_xkj3r"]
-
-[sub_resource type="Resource" id="Resource_ijb7h"]
-script = ExtResource("1_ijb7h")
-name = "Juno"
-image = ExtResource("2_minn2")
-metadata/_custom_type_script = "uid://g675vyv0a1ml"
-
-[sub_resource type="Resource" id="Resource_ukmkt"]
-script = ExtResource("1_ijb7h")
-name = "Cass"
-image = ExtResource("3_xkj3r")
-metadata/_custom_type_script = "uid://g675vyv0a1ml"
 
 [resource]
 script = ExtResource("2_ukmkt")
-characters = Array[ExtResource("1_ijb7h")]([SubResource("Resource_ijb7h"), SubResource("Resource_ukmkt")])
 metadata/_custom_type_script = "uid://cp7xhmrvd3fmm"
