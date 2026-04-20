@@ -7,5 +7,5 @@
 script = ExtResource("2_kqc8s")
 light_projector = ExtResource("1_dq835")
 light_color = Color(0.20784314, 0.2901961, 0.7921569, 1)
-light_energy = 3.5
+light_energy = 0.66
 metadata/_custom_type_script = "uid://04dxg81f8hp7"

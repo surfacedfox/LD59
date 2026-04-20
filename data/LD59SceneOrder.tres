@@ -1,9 +1,7 @@
 [gd_resource type="Resource" script_class="SceneDefinition" format=3 uid="uid://sr3dw2kfa2su"]
 
-[ext_resource type="PackedScene" uid="uid://dqnprgoxue3d7" path="res://scenes/TestScene.tscn" id="1_lp0hd"]
-[ext_resource type="Script" uid="uid://cubvidggv1d1" path="res://addons/LD59Core/ResourceDefinitions/SceneDefinition.gd" id="1_pb4hi"]
+[ext_resource type="Script" uid="uid://cubvidggv1d1" path="res://addons/LD59Core/ResourceDefinitions/SceneDefinition.gd" id="3_pb4hi"]
 
 [resource]
-script = ExtResource("1_pb4hi")
-sceneOrder = Array[PackedScene]([ExtResource("1_lp0hd")])
+script = ExtResource("3_pb4hi")
 metadata/_custom_type_script = "uid://cubvidggv1d1"

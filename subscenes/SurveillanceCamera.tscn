@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cwu2qxeqf5iba"]
+
+[ext_resource type="Script" uid="uid://cbx8olrgnr2bk" path="res://addons/LD59Core/surveillance_camera.gd" id="1_surv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pick"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_yi2mt"]
+
+[node name="SurveillanceCamera" type="Node3D" unique_id=1039263258]
+script = ExtResource("1_surv")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1391979104]
+
+[node name="PickBody" type="StaticBody3D" parent="." unique_id=808242972]
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickBody" unique_id=2127441267]
+shape = SubResource("SphereShape3D_pick")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PickBody" unique_id=1124659141]
+mesh = SubResource("SphereMesh_yi2mt")

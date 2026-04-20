@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bvlyqag0hiv8i"]
+
+[resource]
+resource_name = "Chris_Skin"
+albedo_color = Color(0.7836416, 0.7314696, 0.62221795, 1)
+metallic = 0.8529343
+roughness = 0.16587472

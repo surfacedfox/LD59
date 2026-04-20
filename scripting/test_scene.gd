@@ -7,7 +7,6 @@ const PARAM_SETS: Array[LightParameters] = [
 	preload("res://data/lights/red.tres"),
 	preload("res://data/lights/blue.tres"),
 	preload("res://data/lights/green.tres"),
-	preload("res://data/lights/cyan.tres"),
 ]
 
 

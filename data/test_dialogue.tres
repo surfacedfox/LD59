@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://bam8q6le5aenh"]
+
+[ext_resource type="Script" uid="uid://bctfte5iq65nb" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_1xso7"]
+
+[resource]
+script = ExtResource("1_1xso7")
+starts = {
+"intro": &"0_1"
+}
+nodes = {
+&"0_1": {
+"link": &"1_1",
+"offset": Vector2(-140, 60),
+"start_id": "intro"
+},
+&"1_1": {
+"dialogue": "The colony is such a noisy place. Hard to focus.",
+"offset": Vector2(140, 60),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300.00006, 260.00006),
+"speaker": -1
+},
+&"1_2": {
+"dialogue": "That’s why I’ve always preferred my work at the signal station. It’s far away from the colony, to cut down on the noise.",
+"offset": Vector2(500, 60),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300.00012, 260.00006),
+"speaker": -1
+},
+&"1_3": {
+"dialogue": "I know there’s probably nothing out there, but I feel that if I just keep ◯SEARCHING… maybe I’ll find something worth listening to.",
+"offset": Vector2(860, 60),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 260.00006),
+"speaker": -1
+}
+}
+characters = "res://data/chars.tres"

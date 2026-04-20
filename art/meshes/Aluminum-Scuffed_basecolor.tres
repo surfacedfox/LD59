@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cmrhttgdbgmpq"]
+
+[ext_resource type="Texture2D" uid="uid://c3l7kcm66tveg" path="res://art/meshes/kitchen_6.png" id="1_fig5e"]
+[ext_resource type="Texture2D" uid="uid://bvox7ka7bqb2d" path="res://art/meshes/kitchen_7.png" id="2_vw6fq"]
+[ext_resource type="Texture2D" uid="uid://cl5rg51smea84" path="res://art/meshes/kitchen_8.png" id="3_unaof"]
+
+[resource]
+resource_name = "Aluminum-Scuffed_basecolor"
+albedo_color = Color(0.9777899, 0.9777899, 0.9777899, 1)
+albedo_texture = ExtResource("1_fig5e")
+metallic = 0.29355836
+metallic_texture = ExtResource("2_vw6fq")
+metallic_texture_channel = 2
+roughness = 0.561086
+roughness_texture = ExtResource("2_vw6fq")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_unaof")

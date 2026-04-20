@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://cwfllqeqf5iba"]
+
+[ext_resource type="PackedScene" uid="uid://cwu2qxeqf5iba" path="res://subscenes/SurveillanceCamera.tscn" id="1_scn"]
+[ext_resource type="Script" uid="uid://dvkohiqx3v0di" path="res://addons/LD59Core/surf_interactable.gd" id="2_interact"]
+[ext_resource type="Resource" uid="uid://bpnlhiny1rc38" path="res://data/test_dialog.tres" id="3_537tg"]
+
+[sub_resource type="Environment" id="Environment_1"]
+background_mode = 1
+background_color = Color(0.15, 0.16, 0.2, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.65, 0.7, 0.8, 1)
+ambient_light_energy = 0.4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_interact"]
+size = Vector3(1.2, 1.2, 1.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_interact"]
+size = Vector3(1.2, 1.2, 1.2)
+
+[node name="CameraSurfDemo" type="Node3D" unique_id=882810712]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=618235417]
+environment = SubResource("Environment_1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1614279760]
+transform = Transform3D(0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, -0.75, 0.433013, 0, 6, 0)
+light_energy = 1.2
+shadow_enabled = true
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=29284642]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4673233, 3)
+size = Vector3(24, 0.5, 24)
+
+[node name="InteractProp" type="StaticBody3D" parent="." unique_id=1377860616]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76692, 1.1, 5.441557)
+collision_layer = 256
+collision_mask = 0
+script = ExtResource("2_interact")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractProp" unique_id=2009247373]
+shape = SubResource("BoxShape3D_interact")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="InteractProp" unique_id=1438847617]
+mesh = SubResource("BoxMesh_interact")
+
+[node name="CamA" parent="." unique_id=2039526168 instance=ExtResource("1_scn")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.6, -1.1587785)
+is_entry = true
+
+[node name="CamB" parent="." unique_id=1960716007 instance=ExtResource("1_scn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 7)
+
+[node name="CamB2" parent="." unique_id=1039263258 instance=ExtResource("1_scn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.080298, 1.5999995, 7.5141106)
+first_visit_dialogue = ExtResource("3_537tg")
+
+[node name="CamB3" parent="." unique_id=1509849381 instance=ExtResource("1_scn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7637415, 1.5999995, -6.4842386)
