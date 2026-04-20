@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://md7rsviyqtx7"]
+
+[ext_resource type="PackedScene" uid="uid://dqnprgoxue3d7" path="res://scenes/ViewportScene.tscn" id="1_6kdan"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" unique_id=1741507324]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -480.0
+offset_top = -270.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_target = true
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=999479387]
+handle_input_locally = false
+physics_object_picking = true
+size = Vector2i(480, 270)
+render_target_update_mode = 4
+
+[node name="Node3D" parent="SubViewport" unique_id=1591878142 instance=ExtResource("1_6kdan")]

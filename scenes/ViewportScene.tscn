@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dqnprgoxue3d7"]
+
+[ext_resource type="Script" uid="uid://d1ic3qhrquqpn" path="res://scripting/test_scene.gd" id="1_hmreh"]
+[ext_resource type="PackedScene" uid="uid://dpjhpfkk3hukq" path="res://addons/DragAndDrop3D/nodes/DragAndDrop3D.tscn" id="3_tppg1"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_go42g"]
+lightmap_size_hint = Vector2i(52, 52)
+add_uv2 = true
+size = Vector2(10, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nb1wl"]
+size = Vector3(10, 0.05, 10)
+
+[node name="Node3D" type="Node3D" unique_id=1591878142]
+script = ExtResource("1_hmreh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1092976673]
+
+[node name="BGPlane" type="MeshInstance3D" parent="StaticBody3D" unique_id=2052072014]
+mesh = SubResource("PlaneMesh_go42g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=863579293]
+shape = SubResource("BoxShape3D_nb1wl")
+
+[node name="DragAndDrop3d" parent="." unique_id=1460727689 instance=ExtResource("3_tppg1")]
+useSnap = true
+snapOverlap = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=337301423]
+transform = Transform3D(-1, 8.742278e-08, -4.371139e-08, -4.371139e-08, 1.9106855e-15, 1, 8.742278e-08, 1, 1.9106855e-15, 0, 1, 0)
+current = true
