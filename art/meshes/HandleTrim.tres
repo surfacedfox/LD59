@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bkich8ppmv1wl"]
+
+[resource]
+resource_name = "HandleTrim"
+albedo_color = Color(0.615762, 0.615762, 0.615762, 1)
+roughness = 0.6

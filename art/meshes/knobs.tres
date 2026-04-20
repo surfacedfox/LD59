@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cn1ay4m6owp6p"]
+
+[resource]
+resource_name = "knobs"
+metallic = 0.63404804
+roughness = 0.5428455

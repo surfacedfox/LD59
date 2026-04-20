@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ckn4qsh4edkjl"]
+
+[ext_resource type="Texture2D" uid="uid://xpl08gmnuesl" path="res://art/meshes/kitchen_3.jpg" id="1_jlynb"]
+[ext_resource type="Texture2D" uid="uid://c3bmiwdabycqb" path="res://art/meshes/kitchen_4.png" id="2_6m21h"]
+[ext_resource type="Texture2D" uid="uid://bs8hkuxmsy5y5" path="res://art/meshes/kitchen_5.png" id="3_vdp4p"]
+
+[resource]
+resource_name = "Leather02-basecolor"
+albedo_texture = ExtResource("1_jlynb")
+metallic = 0.14763421
+metallic_texture = ExtResource("2_6m21h")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_6m21h")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_vdp4p")

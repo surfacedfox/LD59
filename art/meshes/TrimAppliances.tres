@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dxlrf7ww7q6yl"]
+
+[resource]
+resource_name = "TrimAppliances"
+metallic = 0.39084113
+roughness = 0.15979455

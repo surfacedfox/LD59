@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://coardl7jeribe"]
+
+[resource]
+resource_name = "Plastic03-basecolor"
+albedo_color = Color(0.20796461, 0.20520402, 0.20520402, 1)
+roughness = 0.6

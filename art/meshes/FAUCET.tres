@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b24cox58xe4e3"]
+
+[resource]
+resource_name = "FAUCET"
+albedo_color = Color(0.89931244, 0.89931244, 0.89931244, 1)
+metallic = 0.7799722
+roughness = 0.48204374

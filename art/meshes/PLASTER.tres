@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://byejehxp3rqci"]
+
+[resource]
+resource_name = "PLASTER"
+albedo_color = Color(0.9482422, 0.9482422, 0.9482422, 1)
+roughness = 0.6

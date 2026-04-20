@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://csknys1hlnubq"]
+
+[resource]
+resource_name = "0111_SlateGray"
+albedo_color = Color(0.6938044, 0.7366471, 0.77646726, 1)
+roughness = 0.2631575

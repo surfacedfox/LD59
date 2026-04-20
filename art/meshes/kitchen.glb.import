@@ -1,0 +1,300 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dgovelpqqw3as"
+path="res://.godot/imported/kitchen.glb-49433ced4a13e354cbe36ebf4aeef42c.scn"
+
+[deps]
+
+source_file="res://art/meshes/kitchen.glb"
+dest_files=["res://.godot/imported/kitchen.glb-49433ced4a13e354cbe36ebf4aeef42c.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=0.1
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"0111_SlateGray": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/0111_SlateGray.tres",
+"use_external/path": "uid://csknys1hlnubq"
+},
+"Aluminum-Scuffed_basecolor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/Aluminum-Scuffed_basecolor.tres",
+"use_external/path": "uid://cmrhttgdbgmpq"
+},
+"Background": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/Background.tres",
+"use_external/path": "uid://p8eh6iro0j1u"
+},
+"Chris_Skin": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/Chris_Skin.tres",
+"use_external/path": "uid://bvlyqag0hiv8i"
+},
+"Color_002": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/Color_002.tres",
+"use_external/path": "uid://bj06nxvx8nri1"
+},
+"Color_A05": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/Color_A05.tres",
+"use_external/path": "uid://drv2vjkglmpcn"
+},
+"Color_D05": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/Color_D05.tres",
+"use_external/path": "uid://cs7ekamk2qbwj"
+},
+"Color_D07": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/Color_D07.tres",
+"use_external/path": "uid://ctwoh1akd0rhi"
+},
+"Color_G06": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/Color_G06.tres",
+"use_external/path": "uid://c88yvnkceqqmq"
+},
+"Color_I05": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/Color_I05.tres",
+"use_external/path": "uid://c1v2mhpqcvu4e"
+},
+"Color_J01": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/Color_J01.tres",
+"use_external/path": "uid://domuyor2doh0r"
+},
+"Color_M02": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/Color_M02.tres",
+"use_external/path": "uid://clrqv3rmlbl0a"
+},
+"Color_M05": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/Color_M05.tres",
+"use_external/path": "uid://dvts86r6rygpd"
+},
+"FAUCET": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/FAUCET.tres",
+"use_external/path": "uid://b24cox58xe4e3"
+},
+"FanLight02": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/FanLight02.tres",
+"use_external/path": "uid://ptpfirujr1g1"
+},
+"FloorTiles01-basecolor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/FloorTiles01-basecolor.tres",
+"use_external/path": "uid://dx3twk1n1d10u"
+},
+"HandleTrim": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/HandleTrim.tres",
+"use_external/path": "uid://bkich8ppmv1wl"
+},
+"HingeGray": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/HingeGray.tres",
+"use_external/path": "uid://biey3hbiyns2u"
+},
+"Leather02-basecolor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/Leather02-basecolor.tres",
+"use_external/path": "uid://ckn4qsh4edkjl"
+},
+"Metal_Rough": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/Metal_Rough.tres",
+"use_external/path": "uid://cfoa7c5fy1thx"
+},
+"Metal_Rough_0": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/Metal_Rough_0.tres",
+"use_external/path": "uid://cyjia4sdrsg8t"
+},
+"PLASTER": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/PLASTER.tres",
+"use_external/path": "uid://byejehxp3rqci"
+},
+"Plastic03-basecolor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/Plastic03-basecolor.tres",
+"use_external/path": "uid://coardl7jeribe"
+},
+"STAINLESSSTEAL": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/STAINLESSSTEAL.tres",
+"use_external/path": "uid://c7igdwo6oia12"
+},
+"StoveBurners": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/StoveBurners.tres",
+"use_external/path": "uid://chtt70nunqhph"
+},
+"StoveKnobs": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/StoveKnobs.tres",
+"use_external/path": "uid://mcfbn4loqbgr"
+},
+"StoveTopGlass": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/StoveTopGlass.tres",
+"use_external/path": "uid://bbxehap3q2af7"
+},
+"Terrazo03-basecolor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/Terrazo03-basecolor.tres",
+"use_external/path": "uid://c4ih60bcv16pn"
+},
+"Tiles18-basecolor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/Tiles18-basecolor.tres",
+"use_external/path": "uid://b1dovow443gor"
+},
+"Translucent_Glass_Blue": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/Translucent_Glass_Blue.tres",
+"use_external/path": "uid://cws7iwk1bgafx"
+},
+"Translucent_Glass_Dark_Green": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/Translucent_Glass_Dark_Green.tres",
+"use_external/path": "uid://dceixr6p8bu7o"
+},
+"Translucent_Glass_Gray": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/Translucent_Glass_Gray.tres",
+"use_external/path": "uid://cwfrgxy8skjjg"
+},
+"Translucent_Glass_Gray_1": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/Translucent_Glass_Gray_1.tres",
+"use_external/path": "uid://dm3cn2h88tgvx"
+},
+"TrimAppliances": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/TrimAppliances.tres",
+"use_external/path": "uid://dxlrf7ww7q6yl"
+},
+"White-14": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/White-14.tres",
+"use_external/path": "uid://b5ttrd5g8qoan"
+},
+"Windows": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/Windows.tres",
+"use_external/path": "uid://45p8roxavm1v"
+},
+"Wood09-basecolor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/Wood09-basecolor.tres",
+"use_external/path": "uid://cl2ddjrgj4uq2"
+},
+"Wood13-basecolor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/Wood13-basecolor.tres",
+"use_external/path": "uid://7rxkqqjx15w6"
+},
+"edge_color000255": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/edge_color000255.tres",
+"use_external/path": "uid://08fkajwg6fip"
+},
+"edge_color1531571600": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/edge_color1531571600.tres",
+"use_external/path": "uid://b3m11phdbfmk0"
+},
+"edge_color198198198255": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/edge_color198198198255.tres",
+"use_external/path": "uid://bkjcyrhn53o6j"
+},
+"edge_color220220220255": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/edge_color220220220255.tres",
+"use_external/path": "uid://cari45xk8pxo"
+},
+"edge_color303030255": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/edge_color303030255.tres",
+"use_external/path": "uid://pb1lhivpn0vi"
+},
+"edge_color562615255": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/edge_color562615255.tres",
+"use_external/path": "uid://bgavelc62on8f"
+},
+"hardware": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/hardware.tres",
+"use_external/path": "uid://b1qfhm2nt064c"
+},
+"knobs": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/knobs.tres",
+"use_external/path": "uid://cn1ay4m6owp6p"
+},
+"light": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/light.tres",
+"use_external/path": "uid://b80s7iph6c4hm"
+},
+"lightStove": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/lightStove.tres",
+"use_external/path": "uid://jp6aox6edvst"
+},
+"liquid": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/liquid.tres",
+"use_external/path": "uid://xpu2a657gp1n"
+},
+"material": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/material.tres",
+"use_external/path": "uid://bhlsj7hl617hw"
+},
+"vent": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/vent.tres",
+"use_external/path": "uid://bvybu48p6f0q4"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1

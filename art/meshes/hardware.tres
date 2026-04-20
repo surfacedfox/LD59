@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b1qfhm2nt064c"]
+
+[resource]
+resource_name = "hardware"
+albedo_color = Color(0.8938053, 0.84144676, 0.54577494, 1)
+metallic = 0.87725496
+roughness = 0.3300394

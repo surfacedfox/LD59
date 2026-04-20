@@ -17,3 +17,11 @@ shape = SubResource("SphereShape3D_lyiwk")
 [node name="light" type="SpotLight3D" parent="body" unique_id=1106732581]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.426, 0)
 shadow_enabled = true
+
+[node name="bglight" type="SpotLight3D" parent="body" unique_id=1395539349]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -1.3363907, 0)
+light_energy = 1.26
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 82.875
+spot_angle = 72.0
