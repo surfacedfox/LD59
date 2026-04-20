@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ba54hcf3espeh"]
 
 [ext_resource type="Shader" uid="uid://0c7eiw1fff0p" path="res://shaders/screendither.gdshader" id="1_2gju5"]
-[ext_resource type="PackedScene" uid="uid://dqnprgoxue3d7" path="res://scenes/ViewportScene.tscn" id="3_n77mx"]
+[ext_resource type="PackedScene" uid="uid://md7rsviyqtx7" path="res://subscenes/LightsSubViewport.tscn" id="2_rlkm5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pn5b2"]
 
@@ -62,23 +62,16 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Control" unique_id=119225391]
+[node name="SubViewportContainer" parent="Control" unique_id=1741507324 instance=ExtResource("2_rlkm5")]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -480.0
-offset_top = -270.0
+offset_left = -370.0
+offset_top = -370.0
+offset_right = -10.0
+offset_bottom = -10.0
 grow_horizontal = 0
 grow_vertical = 0
-mouse_target = true
-
-[node name="SubViewport" type="SubViewport" parent="Control/SubViewportContainer" unique_id=1691698157]
-handle_input_locally = false
-physics_object_picking = true
-size = Vector2i(480, 270)
-render_target_update_mode = 4
-
-[node name="Node3D" parent="Control/SubViewportContainer/SubViewport" unique_id=141804616 instance=ExtResource("3_n77mx")]

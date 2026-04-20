@@ -2,23 +2,6 @@
 
 [ext_resource type="Script" uid="uid://6m6tuawb3upu" path="res://scripting/generic_light.gd" id="2_vpt8d"]
 
-[sub_resource type="GDScript" id="GDScript_oqbol"]
-script/source = "extends StaticBody3D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	print(\"Input event: \" + self.to_string())
-"
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_lyiwk"]
 radius = 0.356
 
@@ -27,7 +10,6 @@ script = ExtResource("2_vpt8d")
 metadata/_custom_type_script = "uid://cv7d03i22ga7n"
 
 [node name="body" type="StaticBody3D" parent="." unique_id=766500404]
-script = SubResource("GDScript_oqbol")
 
 [node name="shape" type="CollisionShape3D" parent="body" unique_id=183425181]
 shape = SubResource("SphereShape3D_lyiwk")
