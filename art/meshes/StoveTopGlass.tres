@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://bbxehap3q2af7"]
-
-[resource]
-resource_name = "StoveTopGlass"
-transparency = 4
-albedo_color = Color(0, 0, 0, 0.960784)
-roughness = 0.24491698

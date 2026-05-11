@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://45p8roxavm1v"]
-
-[resource]
-resource_name = "Windows"
-transparency = 4
-albedo_color = Color(0.7654867, 0.7654867, 0.7654867, 0.5550058)
-metallic = 0.8954955
-roughness = 0.2145161

@@ -11,6 +11,8 @@ script = ExtResource("1_surv")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1391979104]
 
+[node name="AudioListener3D" type="AudioListener3D" parent="Camera3D" unique_id=1391979105]
+
 [node name="PickBody" type="StaticBody3D" parent="." unique_id=808242972]
 collision_layer = 128
 collision_mask = 0
@@ -19,4 +21,5 @@ collision_mask = 0
 shape = SubResource("SphereShape3D_pick")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PickBody" unique_id=1124659141]
+visible = false
 mesh = SubResource("SphereMesh_yi2mt")

@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://domuyor2doh0r"]
-
-[resource]
-resource_name = "Color_J01"
-albedo_color = Color(0.7654867, 0.7642877, 0.69774455, 1)
-metallic = 0.8529343
-roughness = 0.41516182

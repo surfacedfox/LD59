@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://jp6aox6edvst"]
-
-[resource]
-resource_name = "lightStove"
-albedo_color = Color(1, 0.99133086, 0.90829265, 1)
-roughness = 0.6
-emission = Color(1, 1, 0.605781, 1)

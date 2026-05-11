@@ -1,6 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://c7igdwo6oia12"]
-
-[resource]
-resource_name = "STAINLESSSTEAL"
-metallic = 0.9198162
-roughness = 0.41516182

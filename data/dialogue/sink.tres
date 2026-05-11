@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://dfp1k5imc1b3j"]
+
+[ext_resource type="Script" uid="uid://bctfte5iq65nb" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_drur3"]
+
+[resource]
+script = ExtResource("1_drur3")
+starts = {
+"intro": &"0_1"
+}
+nodes = {
+&"0_1": {
+"link": &"1_1",
+"offset": Vector2(-100, 140),
+"start_id": "intro"
+},
+&"1_1": {
+"dialogue": "Oh, that's Voya's expedition from 33 days ago. You can still see the trail.",
+"offset": Vector2(140, 60),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300.00006, 260.00006),
+"speaker": 0
+},
+&"1_2": {
+"dialogue": "Still, not too different from how it was. Nothing to note.",
+"offset": Vector2(500, 60),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 260.00006),
+"speaker": 0
+}
+}
+characters = "res://data/chars.tres"

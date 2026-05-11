@@ -24,7 +24,7 @@ void fragment() {
 	float dist = length(cell_uv);
 
 	float blend = smoothstep(radius, radius - 0.05, dist);
-	vec4 noise_sample = texture(noise, texture(noise, UV).xy + mod(TIME, 1.0) / slow);
+	vec4 noise_sample = texture(noise, texture(noise, UV).xy + mod(TIME, 0.5) / slow);
 	noise_sample.rgb = pow(noise_sample.rgb, vec3(contrast));
 	COLOR = mix(bg_color, sampled, blend) + (noise_sample * multiplier);
 }

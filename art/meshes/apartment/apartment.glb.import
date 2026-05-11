@@ -1,0 +1,545 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://cag2amw0a5yej"
+path="res://.godot/imported/apartment.glb-e83e934def9e365791728f3bfaaa0acc.scn"
+
+[deps]
+
+source_file="res://art/meshes/apartment/apartment.glb"
+dest_files=["res://.godot/imported/apartment.glb-e83e934def9e365791728f3bfaaa0acc.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"Color_102": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_102.tres",
+"use_external/path": "uid://dk7s7pmnx2mbm"
+},
+"Color_106": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_106.tres",
+"use_external/path": "uid://dyyni6ee6pxyn"
+},
+"Color_11": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_11.tres",
+"use_external/path": "uid://7v5kmwpubkjh"
+},
+"Color_112": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_112.tres",
+"use_external/path": "uid://5gcm6sinnr4r"
+},
+"Color_114": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_114.tres",
+"use_external/path": "uid://12es1ttutkbo"
+},
+"Color_115": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_115.tres",
+"use_external/path": "uid://brbyntwf5q8ye"
+},
+"Color_119": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_119.tres",
+"use_external/path": "uid://csxqrl2qj7jr"
+},
+"Color_12": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_12.tres",
+"use_external/path": "uid://c3u5xbbnn8dfs"
+},
+"Color_121": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_121.tres",
+"use_external/path": "uid://buaijf8ry707t"
+},
+"Color_123": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_123.tres",
+"use_external/path": "uid://b6yafwosn5wgm"
+},
+"Color_125": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_125.tres",
+"use_external/path": "uid://dg7ceaj8s8an0"
+},
+"Color_126": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_126.tres",
+"use_external/path": "uid://bp6ecx5s6bw6d"
+},
+"Color_127": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_127.tres",
+"use_external/path": "uid://fre0rl0lo3h6"
+},
+"Color_13": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_13.tres",
+"use_external/path": "uid://psq3wmoxpp0"
+},
+"Color_130": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_130.tres",
+"use_external/path": "uid://517f0ilrx6pl"
+},
+"Color_131": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_131.tres",
+"use_external/path": "uid://bmgfvlx73d414"
+},
+"Color_132": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_132.tres",
+"use_external/path": "uid://cmuqxqtm4c6lg"
+},
+"Color_134": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_134.tres",
+"use_external/path": "uid://ckm4koyldckau"
+},
+"Color_135": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_135.tres",
+"use_external/path": "uid://pt6hssf6ao2n"
+},
+"Color_14": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_14.tres",
+"use_external/path": "uid://b6bcovuwlgoyv"
+},
+"Color_15": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_15.tres",
+"use_external/path": "uid://dd1sxowyxic1u"
+},
+"Color_18": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_18.tres",
+"use_external/path": "uid://b1h7hgfpeyw7b"
+},
+"Color_19": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_19.tres",
+"use_external/path": "uid://drs483yherk15"
+},
+"Color_20": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_20.tres",
+"use_external/path": "uid://dw7bs5wgmdrlx"
+},
+"Color_23": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_23.tres",
+"use_external/path": "uid://dh12c3tbdmgll"
+},
+"Color_24": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_24.tres",
+"use_external/path": "uid://evx04wdld3e0"
+},
+"Color_25": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_25.tres",
+"use_external/path": "uid://ba0c7iuo4qdui"
+},
+"Color_26": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_26.tres",
+"use_external/path": "uid://drgpqo0dmvqe6"
+},
+"Color_28": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_28.tres",
+"use_external/path": "uid://c1apofsf0p1k4"
+},
+"Color_30": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_30.tres",
+"use_external/path": "uid://cmuoq0kfwv43t"
+},
+"Color_34": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_34.tres",
+"use_external/path": "uid://dmi22aaqi4b53"
+},
+"Color_45": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_45.tres",
+"use_external/path": "uid://cg5va1xnn1jv"
+},
+"Color_50": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_50.tres",
+"use_external/path": "uid://cdlhtymsknjtq"
+},
+"Color_59": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_59.tres",
+"use_external/path": "uid://nsfeflw3w5en"
+},
+"Color_60": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_60.tres",
+"use_external/path": "uid://cft47gwfas2e3"
+},
+"Color_61": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_61.tres",
+"use_external/path": "uid://b6pgg7w8fuc86"
+},
+"Color_64": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_64.tres",
+"use_external/path": "uid://dp85cttgtjb5d"
+},
+"Color_65": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_65.tres",
+"use_external/path": "uid://c7fgpqlt74g4q"
+},
+"Color_68": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_68.tres",
+"use_external/path": "uid://bkbrp1xaqrae3"
+},
+"Color_70": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_70.tres",
+"use_external/path": "uid://rr5bpl748y2g"
+},
+"Color_71": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_71.tres",
+"use_external/path": "uid://4iy4p6jvev2w"
+},
+"Color_73": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_73.tres",
+"use_external/path": "uid://g72hgujsbse4"
+},
+"Color_74": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_74.tres",
+"use_external/path": "uid://cpq1dh7g7nijt"
+},
+"Color_75": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_75.tres",
+"use_external/path": "uid://07xes6cketd0"
+},
+"Color_78": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_78.tres",
+"use_external/path": "uid://ewe8fh1ogs86"
+},
+"Color_79": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_79.tres",
+"use_external/path": "uid://dkiromoovya7f"
+},
+"Color_84": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_84.tres",
+"use_external/path": "uid://bnmdq4a4yv74l"
+},
+"Color_85": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_85.tres",
+"use_external/path": "uid://b1dew35f86wa8"
+},
+"Color_86": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_86.tres",
+"use_external/path": "uid://cn2qfm6qupyp8"
+},
+"Color_87": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_87.tres",
+"use_external/path": "uid://cutsj28c423k6"
+},
+"Color_89": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_89.tres",
+"use_external/path": "uid://cxyx6pr4373cw"
+},
+"Color_94": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_94.tres",
+"use_external/path": "uid://iqvup324gcnu"
+},
+"Color_97": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_97.tres",
+"use_external/path": "uid://de8laymfamb5i"
+},
+"Color_98": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Color_98.tres",
+"use_external/path": "uid://8f0o2yy2n7aj"
+},
+"Fabric_Linen": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Fabric_Linen.tres",
+"use_external/path": "uid://cqrpv7imt6yno"
+},
+"Merged_materials": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Merged_materials.tres",
+"use_external/path": "uid://cfkxg8xw4acwj"
+},
+"Suede_Brown": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/Suede_Brown.tres",
+"use_external/path": "uid://ceyrage5vlkjv"
+},
+"img10_63": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/img10_63.tres",
+"use_external/path": "uid://wwuw0hdj6aot"
+},
+"img15_27": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/img15_27.tres",
+"use_external/path": "uid://c3u6b1aylkkp8"
+},
+"img16_29": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/img16_29.tres",
+"use_external/path": "uid://cvjmmvn6702rd"
+},
+"img17_33_1": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/img17_33_1.tres",
+"use_external/path": "uid://bpb4fmswbidmh"
+},
+"img1_0": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/img1_0.tres",
+"use_external/path": "uid://c2f3s5u1u6cqh"
+},
+"img20_37": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/img20_37.tres",
+"use_external/path": "uid://22y1qus2qftm"
+},
+"img21_38": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/img21_38.tres",
+"use_external/path": "uid://dd40ofimvv7wj"
+},
+"img22_40_3": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/img22_40_3.tres",
+"use_external/path": "uid://dqctu4qhwxkex"
+},
+"img24_43": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/img24_43.tres",
+"use_external/path": "uid://ck0uk0t7i20ae"
+},
+"img27_17": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/img27_17.tres",
+"use_external/path": "uid://cpuxke0itdtfc"
+},
+"img28_47": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/img28_47.tres",
+"use_external/path": "uid://6wyl4q1mgayx"
+},
+"img2_3": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/img2_3.tres",
+"use_external/path": "uid://c8igbf1iusft"
+},
+"img30_49": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/img30_49.tres",
+"use_external/path": "uid://dhep7u01l7pnj"
+},
+"img31_51": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/img31_51.tres",
+"use_external/path": "uid://bdgn35gcnf2n5"
+},
+"img33_53": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/img33_53.tres",
+"use_external/path": "uid://b8tjn0071v8x6"
+},
+"img34_54": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/img34_54.tres",
+"use_external/path": "uid://cunhom08lfqqj"
+},
+"img35_55_3": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/img35_55_3.tres",
+"use_external/path": "uid://cmmas4w0xu2ft"
+},
+"img36_56": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/img36_56.tres",
+"use_external/path": "uid://dmlrnx5apbgw1"
+},
+"img38_58": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/img38_58.tres",
+"use_external/path": "uid://bpudhmbv34rug"
+},
+"img9_62": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/img9_62.tres",
+"use_external/path": "uid://c67hfqounv1go"
+},
+"pushed_1672102239_img5_69": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/pushed_1672102239_img5_69.tres",
+"use_external/path": "uid://dkn2u5wp1rwje"
+},
+"pushed_1672102239_img7_72": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/pushed_1672102239_img7_72.tres",
+"use_external/path": "uid://bnomb7f7hxy6s"
+},
+"pushed_1672103073_img10_76": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/pushed_1672103073_img10_76.tres",
+"use_external/path": "uid://bsg06ojns4y4q"
+},
+"pushed_1672103073_img11_77_1": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/pushed_1672103073_img11_77_1.tres",
+"use_external/path": "uid://ew2fq15v183a"
+},
+"pushed_1672103073_img12_133": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/pushed_1672103073_img12_133.tres",
+"use_external/path": "uid://cojqkxh84q3tn"
+},
+"pushed_1672103073_img13_136": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/pushed_1672103073_img13_136.tres",
+"use_external/path": "uid://dbyyk5sum8hg2"
+},
+"pushed_1672103073_img14_137": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/pushed_1672103073_img14_137.tres",
+"use_external/path": "uid://djiqwij6a05fy"
+},
+"pushed_1672103073_img15_138": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/pushed_1672103073_img15_138.tres",
+"use_external/path": "uid://b0pfswa1npnmk"
+},
+"pushed_1672103073_img16_139": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/pushed_1672103073_img16_139.tres",
+"use_external/path": "uid://b3iei3ytno1km"
+},
+"pushed_1672103073_img18_82": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/pushed_1672103073_img18_82.tres",
+"use_external/path": "uid://v2ewaqygsn0g"
+},
+"pushed_1672103073_img19_81": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/pushed_1672103073_img19_81.tres",
+"use_external/path": "uid://cp122242fta4j"
+},
+"pushed_1672103073_img24_118": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/pushed_1672103073_img24_118.tres",
+"use_external/path": "uid://cc3swvlnmbysi"
+},
+"pushed_1672103073_img26_128": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/pushed_1672103073_img26_128.tres",
+"use_external/path": "uid://d0vqlbb3acwqg"
+},
+"pushed_1672103073_img31_96": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/pushed_1672103073_img31_96.tres",
+"use_external/path": "uid://da6dekxj220rq"
+},
+"pushed_1672103073_img33_100": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/pushed_1672103073_img33_100.tres",
+"use_external/path": "uid://bloop3mudhvln"
+},
+"pushed_1672103073_img34_101": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/pushed_1672103073_img34_101.tres",
+"use_external/path": "uid://d2xxwxl22s75l"
+},
+"pushed_1672103073_img35_103": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/pushed_1672103073_img35_103.tres",
+"use_external/path": "uid://bqn72a2fldyy2"
+},
+"pushed_1672103073_img36_104": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/pushed_1672103073_img36_104.tres",
+"use_external/path": "uid://bn6cxrckhomdr"
+},
+"pushed_1672103073_img40_109": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/pushed_1672103073_img40_109.tres",
+"use_external/path": "uid://b0rwjea4cha5s"
+},
+"pushed_1672103073_img43_113": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/pushed_1672103073_img43_113.tres",
+"use_external/path": "uid://bneljhbmy0v6t"
+},
+"pushed_1672103073_img5_88": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/pushed_1672103073_img5_88.tres",
+"use_external/path": "uid://bipre3hq3bcy0"
+},
+"pushed_1672103073_img7_90": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/pushed_1672103073_img7_90.tres",
+"use_external/path": "uid://cmuyeywt1m38y"
+},
+"pushed_1672103073_img9_93": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://art/meshes/apartment/mat/pushed_1672103073_img9_93.tres",
+"use_external/path": "uid://c4u5mt2wq1hcg"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1

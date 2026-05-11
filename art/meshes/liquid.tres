@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://xpu2a657gp1n"]
-
-[resource]
-resource_name = "liquid"
-transparency = 4
-albedo_color = Color(0.6566595, 0.67256635, 0.2231968, 0.737411)
-metallic = 0.4455627
-roughness = 0.5428455

@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://p8eh6iro0j1u"]
-
-[resource]
-resource_name = "Background"
-albedo_color = Color(0.37750834, 0.37750834, 0.37750834, 1)
-metallic = 0.737411
-roughness = 0.23275663

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwfllqeqf5iba"]
 
 [ext_resource type="PackedScene" uid="uid://cwu2qxeqf5iba" path="res://subscenes/SurveillanceCamera.tscn" id="1_scn"]
-[ext_resource type="Script" uid="uid://dvkohiqx3v0di" path="res://addons/LD59Core/surf_interactable.gd" id="2_interact"]
+[ext_resource type="Script" path="res://addons/LD59Core/surf_interactable.gd" id="2_interact"]
 [ext_resource type="Resource" uid="uid://bpnlhiny1rc38" path="res://data/test_dialog.tres" id="3_537tg"]
 
 [sub_resource type="Environment" id="Environment_1"]

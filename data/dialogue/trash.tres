@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://bywwl3q5j28ds"]
+
+[ext_resource type="Script" uid="uid://bctfte5iq65nb" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_y2y6n"]
+
+[resource]
+script = ExtResource("1_y2y6n")
+starts = {
+"intro": &"0_1"
+}
+nodes = {
+&"0_1": {
+"link": &"1_1",
+"offset": Vector2(-100, 140),
+"start_id": "intro"
+},
+&"1_1": {
+"dialogue": "This looks like another food source from not too long ago.",
+"offset": Vector2(140, 60),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300.00006, 260.00006),
+"speaker": 0
+},
+&"1_2": {
+"dialogue": "Overall, nothing too remarkable, no signs of intelligent life.",
+"offset": Vector2(500, 60),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 260.00006),
+"speaker": 0
+}
+}
+characters = "res://data/chars.tres"

@@ -1,0 +1,19 @@
+[gd_resource type="Environment" format=3 uid="uid://dm03o05rh0gsj"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pn5b2"]
+
+[sub_resource type="Sky" id="Sky_mncer"]
+sky_material = SubResource("ProceduralSkyMaterial_pn5b2")
+
+[resource]
+background_energy_multiplier = 0.0
+sky = SubResource("Sky_mncer")
+tonemap_mode = 3
+tonemap_agx_white = 16.5
+ssil_enabled = true
+glow_enabled = true
+glow_intensity = 0.96
+glow_bloom = 0.94
+fog_density = 0.001
+fog_sky_affect = 0.165
+volumetric_fog_enabled = true

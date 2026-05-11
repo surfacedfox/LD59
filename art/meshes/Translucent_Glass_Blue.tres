@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://cws7iwk1bgafx"]
-
-[resource]
-resource_name = "Translucent_Glass_Blue"
-transparency = 4
-albedo_color = Color(0.2068957, 0.25983346, 0.32507575, 0.501961)
-roughness = 0.6

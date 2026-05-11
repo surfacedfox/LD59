@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://c4ih60bcv16pn"]
-
-[resource]
-resource_name = "Terrazo03-basecolor"
-albedo_color = Color(0.2417574, 0.24241231, 0.27876106, 1)
-metallic = 0.026030742
-roughness = 0.4394825

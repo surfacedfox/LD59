@@ -7,6 +7,7 @@ const LAYER_WORLD_INTERACT: int = 1 << 8
 
 const CANVAS_LAYER_RETICLE: int = 50
 const CANVAS_LAYER_DIALOGUE: int = 80
+const CANVAS_LAYER_FADE: int = 100
 
 signal hover_valid_changed(is_valid: bool)
 signal interact_hover_changed(is_hovering: bool)
@@ -87,6 +88,8 @@ func unregister(cam: SurveillanceCamera) -> void:
 	_first_visit_dialogue_done.erase(cam.get_instance_id())
 	_registered.erase(cam)
 	if active_camera == cam:
+		if is_instance_valid(cam):
+			cam.restore_authored_view()
 		active_camera = null
 		_clear_all_current()
 		_set_hover(null, false)
@@ -122,20 +125,30 @@ func _pick_entry_camera() -> SurveillanceCamera:
 func start(entry: SurveillanceCamera) -> void:
 	if entry == null or not is_instance_valid(entry) or not entry.is_inside_tree():
 		return
+	if active_camera != null and active_camera != entry and is_instance_valid(active_camera):
+		active_camera.restore_authored_view()
 	active_camera = entry
 	_make_current(entry)
 	_apply_mouse_mode()
-	_maybe_play_first_visit_dialogue(entry)
+	if entry.is_end_camera:
+		_maybe_play_end_camera_dialogue(entry)
+	else:
+		_maybe_play_first_visit_dialogue(entry)
 
 
 func switch_to(target: SurveillanceCamera) -> bool:
 	if not _is_valid_hop_target(target):
 		return false
+	if active_camera != null and active_camera != target and is_instance_valid(active_camera):
+		active_camera.restore_authored_view()
 	active_camera = target
 	_make_current(target)
 	_play_switch_polish(target)
 	_apply_mouse_mode()
-	_maybe_play_first_visit_dialogue(target)
+	if target.is_end_camera:
+		_maybe_play_end_camera_dialogue(target)
+	else:
+		_maybe_play_first_visit_dialogue(target)
 	return true
 
 
@@ -148,6 +161,7 @@ func _make_current(entry: SurveillanceCamera) -> void:
 		if c:
 			c.current = false
 	vc.current = true
+	_sync_audio_listeners(entry)
 
 
 func _clear_all_current() -> void:
@@ -155,6 +169,21 @@ func _clear_all_current() -> void:
 		var c: Camera3D = cam.get_view_camera()
 		if c:
 			c.current = false
+	_sync_audio_listeners(null)
+
+
+## Surveillance rigs carry an [AudioListener3D] under [Camera3D]; only the active surf camera's listener is current.
+func _sync_audio_listeners(active: SurveillanceCamera) -> void:
+	for cam in _registered:
+		if not is_instance_valid(cam):
+			continue
+		var al: AudioListener3D = cam.get_audio_listener()
+		if al:
+			al.clear_current()
+	if active != null and is_instance_valid(active):
+		var al_active: AudioListener3D = active.get_audio_listener()
+		if al_active:
+			al_active.make_current()
 
 
 func _pick_screen_position() -> Vector2:
@@ -208,6 +237,8 @@ func _restore_surf_mouse_after_dialogue() -> void:
 func _maybe_play_first_visit_dialogue(cam: SurveillanceCamera) -> void:
 	if cam == null or not is_instance_valid(cam):
 		return
+	if cam.is_end_camera:
+		return
 	if cam.first_visit_dialogue == null:
 		return
 	var id: int = cam.get_instance_id()
@@ -221,6 +252,70 @@ func _maybe_play_first_visit_dialogue(cam: SurveillanceCamera) -> void:
 	box.dialogue_ended.connect(_restore_surf_mouse_after_dialogue, CONNECT_ONE_SHOT)
 	box.data = cam.first_visit_dialogue
 	box.start(cam.first_visit_start_id)
+
+
+func _maybe_play_end_camera_dialogue(cam: SurveillanceCamera) -> void:
+	if cam == null or not is_instance_valid(cam) or not cam.is_end_camera:
+		return
+	if cam.end_dialogue == null or cam.end_scene == null:
+		return
+	var box := _get_dialogue_box()
+	if box == null or box.is_running():
+		return
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	box.dialogue_ended.connect(_on_end_camera_dialogue_finished.bind(cam), CONNECT_ONE_SHOT)
+	box.data = cam.end_dialogue
+	box.start(cam.end_dialogue_start_id)
+
+
+func _on_end_camera_dialogue_finished(cam: SurveillanceCamera) -> void:
+	var next: PackedScene = null
+	if is_instance_valid(cam):
+		next = cam.end_scene
+	if next == null:
+		_apply_mouse_mode()
+		return
+	await _fade_out_and_change_scene(next)
+	_apply_mouse_mode()
+
+
+func _fade_out_and_change_scene(packed: PackedScene) -> void:
+	prepare_for_game_master_scene_replace()
+	var layer := CanvasLayer.new()
+	layer.layer = CANVAS_LAYER_FADE
+	var rect := ColorRect.new()
+	rect.color = Color.BLACK
+	rect.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	rect.mouse_filter = Control.MOUSE_FILTER_STOP
+	rect.modulate = Color(1, 1, 1, 0)
+	layer.add_child(rect)
+	add_child(layer)
+	var tw := create_tween()
+	tw.tween_property(rect, "modulate:a", 1.0, 0.55)
+	await tw.finished
+	var gm := get_node_or_null("/root/GameMaster") as Node
+	if gm != null and gm.has_method(&"change_scene_to_packed"):
+		gm.call("change_scene_to_packed", packed)
+	await get_tree().process_frame
+	if not is_instance_valid(rect):
+		return
+	tw = create_tween()
+	tw.tween_property(rect, "modulate:a", 0.0, 0.55)
+	await tw.finished
+	if is_instance_valid(layer):
+		layer.queue_free()
+
+
+## Call before [GameMaster] frees the active scene so unregistering cameras does not hop surf to a dying node.
+func prepare_for_game_master_scene_replace() -> void:
+	if _switch_tween != null:
+		_switch_tween.kill()
+		_switch_tween = null
+	active_camera = null
+	_clear_all_current()
+	_set_hover(null, false)
+	_set_interact_hover(false)
+	_apply_mouse_mode()
 
 
 func _ray_world_interact_hit() -> Dictionary:

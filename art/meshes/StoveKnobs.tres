@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://mcfbn4loqbgr"]
-
-[resource]
-resource_name = "StoveKnobs"
-albedo_color = Color(0.42920354, 0.42920354, 0.42920354, 1)
-metallic = 0.64012825
-roughness = 0.26923767
